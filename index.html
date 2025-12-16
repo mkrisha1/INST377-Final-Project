@@ -1,0 +1,57 @@
+<html>
+<head>
+  <title>Meal Explorer - Home</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+</head>
+<body>
+  <header>
+    <h1>Meal Explorer</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="meals.html">Meals</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Search Section -->
+    <section id="search-section">
+      <h2>Search Meals</h2>
+      <input type="text" id="searchInput" placeholder="Enter meal name">
+      <button id="searchBtn">Search</button>
+    </section>
+
+    <!-- Category Filter Section -->
+    <section id="category-section">
+      <h2>Filter by Category</h2>
+      <select id="categorySelect">
+        <option value="">Select category</option>
+      </select>
+    </section>
+
+    <!-- Meals Display Section -->
+    <section id="meals-section">
+      <h2>Meals</h2>
+      <div id="meals" class="meals-grid"></div>
+    </section>
+
+    <!-- Recipe Details Section -->
+    <section id="recipe-section">
+      <h2>Recipe Details</h2>
+      <div id="recipeDetails"></div>
+    </section>
+
+    <!-- Categories Grid Section -->
+    <section id="categories-section">
+      <h2>Meal Categories</h2>
+      <div id="categories" class="categories-grid"></div>
+    </section>
+   </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
+

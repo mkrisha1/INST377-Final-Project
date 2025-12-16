@@ -1,0 +1,47 @@
+<html>
+<head>
+  <title>Meals - Meal Explorer</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+</head>
+<body>
+  <header>
+    <h1>Meal Explorer</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="meals.html">Meals</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="search-section">
+      <h2>Search Meals</h2>
+      <input type="text" id="searchInput" placeholder="Enter meal name">
+      <button id="searchBtn">Search</button>
+    </section>
+
+    <section id="category-section">
+      <h2>Filter by Category</h2>
+      <select id="categorySelect">
+        <option value="">Select category</option>
+      </select>
+    </section>
+
+    <section id="meals-section">
+      <h2>Meals</h2>
+      <div id="meals" class="meals-grid"></div>
+    </section>
+
+    <section id="recipe-section">
+      <h2>Recipe Details</h2>
+      <div id="recipeDetails"></div>
+    </section>
+
+  </main>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="meals.js"></script>
+</body>
+</html>
