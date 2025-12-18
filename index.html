@@ -1,13 +1,15 @@
 <html>
+
 <head>
-  <title>Meal Explorer - Home</title>
+  <title>CookSmart Home</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 </head>
+
 <body>
   <header>
-    <h1>Meal Explorer</h1>
+    <h1>CookSmart</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="meals.html">Meals</a>
@@ -16,10 +18,27 @@
   </header>
 
   <main>
+    <section id="banner">
+      <div class="banner-text-box">
+        <h1>Cook Smart with Recipes Right for You and Your Family!</h1>
+        <p>Discover delicious recipes made just for you. Search, explore categories, and find your next favorite meal in seconds.</p>
+      </div>
+      <div class="banner-image-container">
+          <img src="https://www.growbadges.com/storage/media/2024/04/07/Blog%20-%20Art%20of%20Cooking-hero.webp" alt="Family cooking together">
+      </div>
+    </section>
+
+
     <section id="search-section">
-      <h2>Search Meals</h2>
-      <input type="text" id="searchInput" placeholder="Enter meal name">
-      <button id="searchBtn">Search</button>
+      <h2>Search Recipes</h2>
+      <h3>Craving something? Type it in and find a recipe!</h3>
+      <div class = search>
+        <br>
+        <input class="searchInput" type="text" placeholder="Search Meal">
+        <button id="searchBtn">Search</button>
+      </div>
+     
+  
     </section>
 
     <section id="category-section">
