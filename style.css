@@ -1,5 +1,4 @@
-
-*{
+{
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -232,4 +231,22 @@ main {
   width: 100%;
   max-width: 400px;
   border-radius: 10px;
+}
+
+#random-meal-section {
+  margin: 3rem 0;
+  text-align: center;
+}
+
+.random-meal-card {
+  max-width: 400px;
+  margin: auto;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.random-meal-card img {
+  width: 100%;
+  border-radius: 8px;
 }
