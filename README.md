@@ -13,7 +13,8 @@ CookSmart is a web application that allows users to search for recipes based on 
 
 The site is optimized for desktop and mobile screens and supports both iOS and Android browsers.
 
-## Link to Developer Manual (NEEDED STILL)
+## Developer Manual
+
 
 
 
