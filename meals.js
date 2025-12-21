@@ -28,6 +28,52 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
+    function loadCarouselImages() {
+      fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Miscellaneous')
+      .then(res => res.json())
+      .then(data => {
+          const carousel = document.getElementById('mealSlider');
+          carousel.innerHTML = ''; 
+  
+          const images = data.meals.slice(0, 10);
+          if (!images || images.length === 0) {
+              console.error('No images found.');
+              return;
+          }
+  
+          const sliderContainer = document.createElement('div');
+          sliderContainer.setAttribute('data-simple-slider', '');
+          sliderContainer.style.width = '700px';
+          sliderContainer.style.height = '500px';
+          sliderContainer.style.margin = '20px auto';
+          sliderContainer.style.borderRadius = '10px';
+          sliderContainer.style.overflow = 'hidden';
+  
+          images.forEach(meal => {
+              const img = document.createElement('img');
+              img.src = meal.strMealThumb;
+              img.alt = meal.strMeal;
+              img.style.width = '100%';
+              img.style.height = '100%';
+              img.style.objectFit = 'contain';
+              sliderContainer.appendChild(img);
+          });
+          carousel.appendChild(sliderContainer);
+  
+          setTimeout(() => {
+              simpleslider.getSlider({
+                  container: sliderContainer,
+                  autoplay: true,
+                  delay: 2, 
+              });
+          }, 100);
+      })
+      .catch(error => {
+          console.error('Error loading carousel images:', error);
+      });
+  }
+  loadCarouselImages();
+
 
   searchBtn.addEventListener('click', () => {
     const query = searchInput.value.trim();

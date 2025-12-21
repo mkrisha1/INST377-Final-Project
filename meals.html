@@ -1,8 +1,8 @@
 <html>
 <head>
-  <title>Meals - Meal Explorer</title>
+  <title>CookSmart Meals</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/simple-slider/1.0.0/simpleslider.min.js"></script>
 </head>
 <body>
   <header>
@@ -10,12 +10,13 @@
     <nav>
       <a href="index.html">Home</a>
       <a href="meals.html">Meals</a>
+      <a href="favorites.html">Favorites</a>
       <a href="about.html">About</a>
     </nav>
   </header>
 
   <main>
-    <section id="search-section">
+    <!-- <section id="search-section">
       <h2>Search Recipes</h2>
       <div class = search>
         <br>
@@ -23,6 +24,11 @@
         <button id="searchBtn">Search</button>
       </div>
     </section>
+  -->
+
+    <div id="carousel-container";>
+      <div id="mealSlider" class="slider"></div>
+    </div>
 
     <section id="category-section">
       <h2>Filter by Category</h2>

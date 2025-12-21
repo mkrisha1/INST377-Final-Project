@@ -158,5 +158,4 @@ document.addEventListener('DOMContentLoaded', () => {
           <p>${meal.strInstructions}</p>`;
       });
   }
-
 });
