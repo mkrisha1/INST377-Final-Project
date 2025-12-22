@@ -47,23 +47,27 @@ Manual Tests:
 ### API Endpoints
 Base URL: https://www.themealdb.com/api/json/v1/1/
 
-Method	    Endpoint	                 Description: 
+Method	  Endpoint	                Description: 
 
-- GET	     random.php	                Returns a random meal
-- GET	     search.php?s=<query>	    Search meals by name
-- GET	     filter.php?c=<category>	Filter meals by category
-- GET	     lookup.php?i=<id>	        Get full recipe by meal ID
-- GET        categories.php             List all categories
+GET	     random.php	                Returns a random meal
+GET	     search.php?s=<query>	    Search meals by name
+GET	     filter.php?c=<category>	Filter meals by category
+GET	     lookup.php?i=<id>	        Get full recipe by meal ID
+GET      categories.php             List all categories
 
 
 Backend
-Method          Endpoint        Description RequestBody     Response
-GET/api/helpGet all help requestsNoneArray of help objects
-POST/api/helpSubmit help request{ name: string, description: string }Created help objectGET/api/shopping-list
-Get shopping listNoneArray of items
+Base URL: http://localhost:3000/api
+
+Method          Endpoint        Description            
+
+GET             /api/help       Get all help requests  
+POST            /api/help       Submit help request    
+Get             shopping        listNoneArray of items
 
 ### Known Bugs
-Random meal selection may disappear after using the search filter
+- Random meal selection may disappear after using the search filter
+- Shopping list does not save if switched between pages
 
 ### Future Development
 - Add automated testing
