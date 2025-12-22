@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const mealsContainer = document.getElementById('meals');
   const recipeDetails = document.getElementById('recipeDetails');
   const categoriesContainer = document.getElementById('categories');
-
   const mealsSection = document.getElementById('meals-section');
   const recipeSection = document.getElementById('recipe-section');
+  const carouselContainer = document.getElementById('mealSlider');
 
   fetch('https://www.themealdb.com/api/json/v1/1/categories.php')
     .then(res => res.json())
@@ -21,107 +21,86 @@ document.addEventListener('DOMContentLoaded', () => {
         data.categories.forEach(cat => {
           categoriesContainer.innerHTML += `
             <div class="category-card">
-              <img src="${cat.strCategoryThumb}">
+              <img src="${cat.strCategoryThumb}" alt="${cat.strCategory}">
               <h3>${cat.strCategory}</h3>
             </div>`;
         });
       }
     });
 
-    function loadCarouselImages() {
-      fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Miscellaneous')
+
+  function loadCarouselImages() {
+    fetch('https://www.themealdb.com/api/json/v1/1/filter.php?c=Miscellaneous')
       .then(res => res.json())
       .then(data => {
-          const carousel = document.getElementById('mealSlider');
-          carousel.innerHTML = ''; 
-  
-          const images = data.meals.slice(0, 10);
-          if (!images || images.length === 0) {
-              console.error('No images found.');
-              return;
-          }
-  
-          const sliderContainer = document.createElement('div');
-          sliderContainer.setAttribute('data-simple-slider', '');
-          sliderContainer.style.width = '900px';
-          sliderContainer.style.height = '500px';
-          sliderContainer.style.margin = '20px auto';
-          sliderContainer.style.borderRadius = '10px';
-          sliderContainer.style.overflow = 'hidden';
-  
-          images.forEach(meal => {
-              const img = document.createElement('img');
-              img.src = meal.strMealThumb;
-              img.alt = meal.strMeal;
-              img.style.width = '100%';
-              img.style.height = '100%';
-              img.style.objectFit = 'contain';
-              sliderContainer.appendChild(img);
+        if (!data.meals || data.meals.length === 0) return;
+        carouselContainer.innerHTML = '';
+
+        const sliderContainer = document.createElement('div');
+        sliderContainer.setAttribute('data-simple-slider', '');
+        sliderContainer.style.width = '700px';
+        sliderContainer.style.height = '500px';
+        sliderContainer.style.margin = '20px auto';
+        sliderContainer.style.overflow = 'hidden';
+
+        data.meals.slice(0, 10).forEach(meal => {
+          const img = document.createElement('img');
+          img.src = meal.strMealThumb;
+          img.alt = meal.strMeal;
+          img.style.width = '100%';
+          img.style.height = '100%';
+          img.style.objectFit = 'contain';
+          sliderContainer.appendChild(img);
+        });
+
+        carouselContainer.appendChild(sliderContainer);
+
+        setTimeout(() => {
+          simpleslider.getSlider({
+            container: sliderContainer,
+            autoplay: true,
+            delay: 2
           });
-          carousel.appendChild(sliderContainer);
-  
-          setTimeout(() => {
-              simpleslider.getSlider({
-                  container: sliderContainer,
-                  autoplay: true,
-                  delay: 2, 
-              });
-          }, 100);
+        }, 100);
       })
-      .catch(error => {
-          console.error('Error loading carousel images:', error);
-      });
+      .catch(err => console.error('Error loading carousel images:', err));
   }
+
   loadCarouselImages();
 
 
-  searchBtn.addEventListener('click', () => {
-    const query = searchInput.value.trim();
-    if (!query) {
-      alert('Enter a meal name!');
-      return;
-    }
+  if (searchBtn && searchInput) {
+    searchBtn.addEventListener('click', () => {
+      const query = searchInput.value.trim();
+      if (!query) {
+        alert('Enter a meal name!');
+        return;
+      }
 
-    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`)
-      .then(res => res.json())
-      .then(data => displayMeals(data.meals));
-  });
+      mealsSection.style.display = 'block';
+      recipeSection.style.display = 'none';
 
-
-  categorySelect.addEventListener('change', () => {
-    const category = categorySelect.value;
-    if (!category) return;
-
-    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`)
-      .then(res => res.json())
-      .then(data => displayMeals(data.meals));
-  });
-
-  categorySelect.addEventListener('change', () => {
-    const category = categorySelect.value;
-     if (!category) return;
-
-    
-    mealsSection.style.display = 'block';
-    recipeSection.style.display = 'block';
-
-    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`)
+      fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`)
         .then(res => res.json())
         .then(data => displayMeals(data.meals));
     });
+  }
 
-  categorySelect.addEventListener('change', () => {
-    const category = categorySelect.value;
-    if (!category) return;
 
-   
-    mealsSection.style.display = 'block';
-    recipeSection.style.display = 'block';
+  if (categorySelect) {
+    categorySelect.addEventListener('change', () => {
+      const category = categorySelect.value;
+      if (!category) return;
 
-    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`)
+      mealsSection.style.display = 'block';
+      recipeSection.style.display = 'none';
+
+      fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`)
         .then(res => res.json())
         .then(data => displayMeals(data.meals));
     });
+  }
+
 
   function displayMeals(meals) {
     mealsContainer.innerHTML = '';
@@ -129,26 +108,43 @@ document.addEventListener('DOMContentLoaded', () => {
     recipeSection.style.display = 'none';
 
     if (!meals) {
-        mealsContainer.innerHTML = '<p>No meals found.</p>';
-        return;
+      mealsContainer.innerHTML = '<p>No meals found.</p>';
+      return;
     }
 
     meals.forEach(meal => {
-        mealsContainer.innerHTML += `
+      mealsContainer.innerHTML += `
         <div class="meal-card">
-            <img src="${meal.strMealThumb}">
-            <h3>${meal.strMeal}</h3>
-            <button data-id="${meal.idMeal}">View Recipe</button>
+          <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
+          <h3>${meal.strMeal}</h3>
+          <button class="view-btn" data-id="${meal.idMeal}">View Recipe</button>
+          <button class="fav-btn"
+            data-id="${meal.idMeal}"
+            data-name="${meal.strMeal}"
+            data-thumb="${meal.strMealThumb}">
+            Save Favorite
+          </button>
         </div>`;
-  });
-
-  document.querySelectorAll('.meal-card button').forEach(btn => {
-    btn.addEventListener('click', () => {
-      recipeSection.style.display = 'block';
-      viewRecipe(btn.dataset.id);
     });
-  });
-}
+
+    document.querySelectorAll('.view-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        recipeSection.style.display = 'block';
+        viewRecipe(btn.dataset.id);
+      });
+    });
+
+    document.querySelectorAll('.fav-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        saveFavorite({
+          meal_id: btn.dataset.id,
+          meal_name: btn.dataset.name,
+          meal_thumb: btn.dataset.thumb
+        });
+      });
+    });
+  }
+
 
   function viewRecipe(mealID) {
     fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealID}`)
@@ -157,9 +153,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const meal = data.meals[0];
         recipeDetails.innerHTML = `
           <h2>${meal.strMeal}</h2>
-          <img src="${meal.strMealThumb}">
+          <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
           <p>${meal.strInstructions}</p>`;
       });
+  }
+
+
+  function saveFavorite(meal) {
+    fetch('http://localhost:3000/favorites', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(meal)
+    })
+      .then(res => res.json())
+      .then(() => alert('Saved to favorites!'))
+      .catch(err => console.error('Error saving favorite:', err));
   }
 
 });

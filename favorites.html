@@ -1,15 +1,14 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>CookSmart Favorites</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Favorites</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
 </head>
-
 <body>
   <header>
-    <h1>CookSmart</h1>
+    <h1>My Favorite Meals</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="meals.html">Meals</a>
@@ -19,12 +18,13 @@
   </header>
 
   <main>
-    <h2>My Favorite Recipes! &#10084;&#65039</h2>
+    <section id="favorites-section">
+      <h2>Your Favorites</h2>
+      <div id="favoritesContainer" class="meals-grid">
+      </div>
+    </section>
   </main>
 
-  <footer id="footer">
-    <p> &copy; 2025, Krisha Mahadevia and Lauren Kim</p>
-  </footer>
-
+  <script src="favorites.js"></script>
 </body>
 </html>

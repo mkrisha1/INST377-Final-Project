@@ -1,27 +1,19 @@
 {
-  "name": "inst377-final-project",
-  "version": "1.0.0",
-  "description": "CookSmart is a web application that allows users to search for recipes based on ingredients or keywords. The application fetches recipe data from a public recipe API and displays results in an interactive, user-friendly interface. Users can browse recipes, view details such as ingredients and instructions, and discover new meal ideas quickly.",
-  "homepage": "https://github.com/mkrisha1/INST377-Final-Project#readme",
-  "bugs": {
-    "url": "https://github.com/mkrisha1/INST377-Final-Project/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mkrisha1/INST377-Final-Project.git"
-  },
-  "license": "ISC",
-  "author": "Krisha Mahadevia and Lauren Kim",
-  "type": "commonjs",
-  "main": "main.js",
-  "directories": {
-    "doc": "docs"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "dependencies": {
-    "express": "^5.2.1",
-    "nodemon": "^3.1.11"
-  }
+    "name": "cooksmart",
+    "version": "1.0.0",
+    "description": "Recipe finder app",
+    "dependencies": {
+        "@supabase/supabase-js": "^2.89.0",
+        "body-parser": "^2.2.1",
+        "cors": "^2.8.5",
+        "express": "^5.2.1",
+        "nodemon": "^3.1.11"
+    },
+    "main": "main.js",
+    "scripts": {
+        "start": "nodemon -e '*'",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC"
 }
