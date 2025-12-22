@@ -56,11 +56,11 @@ Method;	  Endpoint;	                Description
 Backend
 Base URL: http://localhost:3000/api
 
-Method;          Endpoint;        Description            
+Method;          Endpoint;                  Description            
 
-- GET;            /api/help;       Get all help requests  
-- POST;           /api/help;       Submit help request    
-- GET;            shopping;        listNoneArray of items
+- GET;            /api/help;                Get all help requests  
+- POST;           /api/help;                Submit help request    
+- GET;            /api/shopping-list;       Array of items
 
 ### Known Bugs
 - Random meal selection may disappear after using the search filter
