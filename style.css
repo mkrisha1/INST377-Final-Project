@@ -254,3 +254,32 @@ main {
   width: 100%;
   border-radius: 8px;
 }
+
+/* Random Meal Generator Button */
+#newRandomMealBtn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #ff8c42; /* warm food-friendly orange */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 
+    background-color 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+#newRandomMealBtn:hover {
+  background-color: #e6762f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+#newRandomMealBtn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
