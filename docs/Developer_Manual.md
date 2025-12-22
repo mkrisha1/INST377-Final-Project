@@ -24,23 +24,23 @@ Manual Tests:
 ### API Endpoints
 Base URL: https://www.themealdb.com/api/json/v1/1/
 
-Method	  Endpoint	                Description: 
+Method;	  Endpoint;	                Description 
 
-- GET	  random.php	            Returns a random meal
-- GET	  search.php?s=<query>	    Search meals by name
-- GET	  filter.php?c=<category>	Filter meals by category
-- GET	  lookup.php?i=<id>	        Get full recipe by meal ID
-- GET     categories.php            List all categories
+- GET;	  random.php;	            Returns a random meal
+- GET;	  search.php?s=<query>;	    Search meals by name
+- GET;	  filter.php?c=<category>;	Filter meals by category
+- GET;	  lookup.php?i=<id>;	    Get full recipe by meal ID
+- GET;    categories.php;           List all categories
 
 
 Backend
 Base URL: http://localhost:3000/api
 
-Method          Endpoint        Description            
+Method;          Endpoint;        Description            
 
-- GET            /api/help       Get all help requests  
-- POST           /api/help       Submit help request    
-- Get            shopping        listNoneArray of items
+- GET;            /api/help;       Get all help requests  
+- POST;           /api/help;       Submit help request    
+- GET;            shopping;        listNoneArray of items
 
 ### Known Bugs
 - Random meal selection may disappear after using the search filter
