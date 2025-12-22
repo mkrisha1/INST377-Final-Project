@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
   <title>CookSmart Help</title>
@@ -16,26 +15,37 @@
     </nav>
   </header>
 
-  <main>
-    <section id="help-section">
+  <main class="page">
+    <section id="help-section" class="card">
       <h2>Need Help?</h2>
-      <form id="helpForm">
-        <label for="userName">Name:</label><br>
-        <input type="text" id="userName" name="userName" required><br><br>
-
-        <label for="helpDescription">Description:</label><br>
-        <textarea id="helpDescription" name="helpDescription" required></textarea><br><br>
-
-        <button type="submit">Submit</button>
+      <p class="subtext">Send us a message and we’ll get back to you soon.</p>
+  
+      <form id="helpForm" class="help-form">
+        <div class="field">
+          <label for="userName">Name</label>
+          <input type="text" id="userName" name="userName" placeholder="Your name" required>
+        </div>
+  
+        <div class="field">
+          <label for="helpDescription">What do you need help with?</label>
+          <textarea id="helpDescription" name="helpDescription" placeholder="Describe the issue..." required></textarea>
+        </div>
+  
+        <button class="primary-btn" type="submit">Submit</button>
       </form>
-      <p id="helpMessage"></p>
+  
+      <p id="helpMessage" class="status"></p>
     </section>
-
-    <section id="help-table-section">
+  
+    <section id="help-table-section" class="card">
       <h2>Submitted Messages</h2>
-      <div id="helpTableContainer"></div>
+      <div id="helpTableContainer" class="table-wrap"></div>
     </section>
   </main>
+
+  <footer id="footer">
+    <p> &copy; 2025, Krisha Mahadevia and Lauren Kim</p>
+  </footer>
 
   <script src="help.js"></script>
 </body>
