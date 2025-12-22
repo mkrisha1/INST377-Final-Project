@@ -11,7 +11,7 @@ CookSmart is a web application that allows users to search for recipes based on 
 - Safari (macOS and iOS)
 - Microsoft Edge (Chromium-based)
 
-### Description of target browsers
+### Description of Target browsers
 - Google Chrome (latest version)
 - Mozilla Firefox (latest version)
 - Safari (macOS and iOS)
