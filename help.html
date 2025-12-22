@@ -1,7 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
   <title>CookSmart Help</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -18,29 +17,26 @@
   </header>
 
   <main>
-    <br>
-    <section id="help-section" class="filter-card">
+    <section id="help-section">
       <h2>Need Help?</h2>
-      <p>Submit your questions or issues below and we'll get back to you.</p>
-
       <form id="helpForm">
-        <label for="userName">Full Name:</label>
-        <input type="text" id="userName" name="userName" placeholder="Enter your name" required>
-        <label for="helpDescription">Description:</label>
-        <textarea id="helpDescription" name="helpDescription" rows="5" placeholder="Describe your issue" required></textarea>
+        <label for="userName">Name:</label><br>
+        <input type="text" id="userName" name="userName" required><br><br>
+
+        <label for="helpDescription">Description:</label><br>
+        <textarea id="helpDescription" name="helpDescription" required></textarea><br><br>
 
         <button type="submit">Submit</button>
       </form>
+      <p id="helpMessage"></p>
+    </section>
 
-      <div id="helpMessage"></div>
+    <section id="help-table-section">
+      <h2>Submitted Messages</h2>
+      <div id="helpTableContainer"></div>
     </section>
   </main>
 
-  <br> 
-
-  <footer id="footer">
-    <p> &copy; 2025, Krisha Mahadevia and Lauren Kim</p>
-  </footer>
-
+  <script src="help.js"></script>
 </body>
 </html>

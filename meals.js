@@ -118,6 +118,12 @@ document.addEventListener('DOMContentLoaded', () => {
           <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
           <h3>${meal.strMeal}</h3>
           <button class="view-btn" data-id="${meal.idMeal}">View Recipe</button>
+          <button class="fav-btn"
+            data-id="${meal.idMeal}"
+            data-name="${meal.strMeal}"
+            data-thumb="${meal.strMealThumb}">
+            Save Favorite
+          </button>
         </div>`;
     });
 
@@ -152,16 +158,5 @@ document.addEventListener('DOMContentLoaded', () => {
       });
   }
 
-
-  function saveFavorite(meal) {
-    fetch('http://localhost:3000/favorites', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(meal)
-    })
-      .then(res => res.json())
-      .then(() => alert('Saved to favorites!'))
-      .catch(err => console.error('Error saving favorite:', err));
-  }
 
 });
