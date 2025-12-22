@@ -72,7 +72,6 @@ Random meal selection may disappear after using the search filter
 - Allow users to filter by ingredients they already have
 - Provide similar recipe recommendations based on a selected meal
 
-
 https://github.com/mkrisha1/INST377-Final-Project/edit/main/docs/Developer_Manual.md
 
 
