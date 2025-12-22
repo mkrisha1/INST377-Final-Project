@@ -24,9 +24,11 @@ The site is optimized for desktop and mobile screens and supports both iOS and A
 ### Installation
 1) Clone repository: 
       git clone https://github.com/mkrisha1/INST377-Final-Project.git
-2) Open the repository in Virtual Studio Code (or local server) and open index.html.
+2) Install dependencies: npm install
+3) Open the repository in Virtual Studio Code (or local server) and open index.html.
 
 ### Running Application
+In terminal enter: npm start
 Open index.html in a browser or run a local server.
 
 The application features:
@@ -43,12 +45,22 @@ Manual Tests:
 - Recipe Details: Click “View Recipe” on any meal card and verify details load.
 
 ### API Endpoints
-Method	Endpoint	            Description: 
+Base URL: https://www.themealdb.com/api/json/v1/1/
 
-- GET	/     random.php	            Returns a random meal
-- GET	/     search.php?s=<query>	Search meals by name
-- GET	/     filter.php?c=<category>	Filter meals by category
-- GET	/     lookup.php?i=<id>	      Get full recipe by meal ID
+Method	    Endpoint	                 Description: 
+
+- GET	     random.php	                Returns a random meal
+- GET	     search.php?s=<query>	    Search meals by name
+- GET	     filter.php?c=<category>	Filter meals by category
+- GET	     lookup.php?i=<id>	        Get full recipe by meal ID
+- GET        categories.php             List all categories
+
+
+Backend
+Method          Endpoint        Description RequestBody     Response
+GET/api/helpGet all help requestsNoneArray of help objects
+POST/api/helpSubmit help request{ name: string, description: string }Created help objectGET/api/shopping-list
+Get shopping listNoneArray of items
 
 ### Known Bugs
 Random meal selection may disappear after using the search filter
