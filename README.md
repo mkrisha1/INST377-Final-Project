@@ -53,7 +53,7 @@ Method	Endpoint	            Description:
 ### Known Bugs
 Random meal selection may disappear after using the search filter
 
-## Future Development
+### Future Development
 - Add automated testing
 - Improve overall UX/UI
 - Add dietary filters (vegetarian, vegan, gluten-free, dairy-free)
