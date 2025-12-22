@@ -286,7 +286,7 @@ main {
   font-size: 16px;
   font-weight: 600;
   color: #ffffff;
-  background-color: #ff8c42; /* warm food-friendly orange */
+  background-color: #ff8c42; 
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -470,6 +470,7 @@ main {
 .loading {
   text-align: center;
   padding: 20px;
+  color: grey
 }
 
 /* View Recipe Button */
@@ -520,6 +521,7 @@ main {
   border: 1px solid #ddd;
   background: #fafafa;
   cursor: pointer;
+  color: grey;
 }
 
 /* Help Page Styling */
@@ -601,7 +603,7 @@ main {
 /* Status message */
 .status{
   margin-top: 12px;
-  color: #2e7d32; /* success green */
+  color: #2e7d32;
   font-weight: 600;
 }
 

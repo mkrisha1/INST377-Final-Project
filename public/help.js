@@ -16,7 +16,7 @@ async function createHelp() {
     if (data.success) {
       showMessage('Thank you! Message submitted.', 'green');
       document.getElementById('helpForm').reset();
-      await loadHelpData(); // refresh table
+      await loadHelpData();
     } else {
       showMessage(data.error || 'Error submitting', 'red');
     }

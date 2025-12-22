@@ -24,7 +24,7 @@ export default async function handler(req, res) {
     const { data, error } = await supabase
       .from('help')
       .select('*')
-      .order('id', { ascending: false }); // newest first
+      .order('id', { ascending: false });
 
     if (error) return res.status(500).json({ error: error.message });
 
