@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   function saveFavorite(meal) {
-  fetch('http://localhost:3000/favorites', {
+  fetch('/favorites', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(meal)
@@ -128,6 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(() => alert('Saved to favorites!'))
     .catch(err => console.error('Error saving favorite:', err));
 }
+
 
 
 });

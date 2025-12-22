@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CookSmart Help</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>CookSmart</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="meals.html">Meals</a>
+      <a href="kitchen.html">My List</a>
+      <a href="help.html">Help</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="help-section" class="filter-card">
+      <h2>Need Help?</h2>
+      <p>Submit your questions or issues below and we'll get back to you.</p>
+
+      <form id="helpForm">
+        <label for="userName">Your Name:</label>
+        <input type="text" id="userName" name="userName" placeholder="Enter your name" required>
+
+        <label for="helpDescription">Description:</label>
+        <textarea id="helpDescription" name="helpDescription" rows="5" placeholder="Describe your issue" required></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+
+      <div id="helpMessage"></div>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <p> &copy; 2025, Krisha Mahadevia and Lauren Kim</p>
+  </footer>
+
+</body>
+</html>
