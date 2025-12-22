@@ -43,7 +43,7 @@ function showEmptyState() {
     updateCount();
 }
 
-// Add new item
+
 function addItem() {
     const newItem = itemInput.value.trim();
     if (newItem) {
@@ -54,7 +54,6 @@ function addItem() {
     }
 }
 
-// Delete item
 function deleteItem(index) {
     items.splice(index, 1);
     renderList();
@@ -68,7 +67,7 @@ function escapeHtml(text) {
     return div.innerHTML;
 }
 
-// Event listeners
+
 addBtn.addEventListener('click', addItem);
 itemInput.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
