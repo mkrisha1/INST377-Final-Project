@@ -13,13 +13,12 @@ The application features:
 - Display a random meal
 - Search meals by name
 - Filter meals by category
-- Filter meals by cuisine
 - View recipe details
 
 ### Running Tests
 Manual Tests:
-- Random Meal: Open the page and check that a random meal is displayed each time the button is clicked.
-- Search / Category: Enter a search term or select a category; verify results appear.
+- Random Meal: Open the page and check that a random meal is displayed each time the "Surprise Me!" button is clicked.
+- Search / Category: Enter a search term (Home page) or select a category (Meals page); verify results appear.
 - Recipe Details: Click “View Recipe” on any meal card and verify details load.
 
 ### API Endpoints
@@ -31,7 +30,7 @@ GET	     random.php	                Returns a random meal
 GET	     search.php?s=<query>	    Search meals by name
 GET	     filter.php?c=<category>	Filter meals by category
 GET	     lookup.php?i=<id>	        Get full recipe by meal ID
-GET        categories.php             List all categories
+GET      categories.php             List all categories
 
 
 Backend

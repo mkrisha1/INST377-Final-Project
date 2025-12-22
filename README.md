@@ -35,13 +35,12 @@ The application features:
 - Display a random meal
 - Search meals by name
 - Filter meals by category
-- Filter meals by cuisine
 - View recipe details
 
 ### Running Tests
 Manual Tests:
-- Random Meal: Open the page and check that a random meal is displayed each time the button is clicked.
-- Search / Category: Enter a search term or select a category; verify results appear.
+- Random Meal: Open the page and check that a random meal is displayed each time the "Surprise Me!" button is clicked.
+- Search / Category: Enter a search term (Home page) or select a category (Meals page); verify results appear.
 - Recipe Details: Click “View Recipe” on any meal card and verify details load.
 
 ### API Endpoints
