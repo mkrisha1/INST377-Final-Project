@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
           const sliderContainer = document.createElement('div');
           sliderContainer.setAttribute('data-simple-slider', '');
-          sliderContainer.style.width = '700px';
+          sliderContainer.style.width = '900px';
           sliderContainer.style.height = '500px';
           sliderContainer.style.margin = '20px auto';
           sliderContainer.style.borderRadius = '10px';

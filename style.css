@@ -283,3 +283,55 @@ main {
   transform: translateY(0);
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
 }
+
+/* Filters for the Meals page */
+/* Filters row */
+.filters {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin: 20px 0 28px;
+  justify-items: center; 
+}
+
+/* Side-by-side on wider screens */
+@media (min-width: 700px) {
+  .filters {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.filter-card h2 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* Optional: nicer spacing if your main is tight */
+main {
+  padding: 0 16px;
+}
+
+/* Shadow card styling */
+.filter-card {
+  background-color: #82cf5c;
+  padding: 18px 20px;
+  border-radius: 14px;
+  box-shadow: 
+    0 8px 20px rgba(0, 0, 0, 0.173),
+    0 2px 6px rgba(0, 0, 0, 0.153);
+  width: 100%;
+  max-width: 320px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Heading spacing */
+.filter-card h2 {
+  margin-bottom: 12px;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+
+
