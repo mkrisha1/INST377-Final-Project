@@ -118,12 +118,6 @@ document.addEventListener('DOMContentLoaded', () => {
           <img src="${meal.strMealThumb}" alt="${meal.strMeal}">
           <h3>${meal.strMeal}</h3>
           <button class="view-btn" data-id="${meal.idMeal}">View Recipe</button>
-          <button class="fav-btn"
-            data-id="${meal.idMeal}"
-            data-name="${meal.strMeal}"
-            data-thumb="${meal.strMealThumb}">
-            Save Favorite
-          </button>
         </div>`;
     });
 
